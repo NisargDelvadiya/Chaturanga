@@ -220,7 +220,7 @@ export default function Home() {
       {/* Centered Floating Header */}
       <Navbar />
 
-      <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 pt-20 pb-8 flex flex-col gap-4">
+      <main className="flex-1 max-w-5xl w-full mx-auto px-3 sm:px-6 pt-16 sm:pt-20 pb-6 sm:pb-8 flex flex-col gap-3 sm:gap-4">
         {/* Minimalist Stats HUD */}
         <MinimalStatsHUD
           bestDistance={bestDistance}

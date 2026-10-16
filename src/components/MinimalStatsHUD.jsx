@@ -23,9 +23,9 @@ export default function MinimalStatsHUD({
       : 0;
 
   return (
-    <div className="flex flex-wrap items-center justify-between gap-4 p-3.5 rounded-2xl bg-black/40 border border-white/[0.08] backdrop-blur-xl font-mono">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 p-3 sm:p-3.5 rounded-2xl bg-black/40 border border-white/[0.08] backdrop-blur-xl font-mono">
       {/* 1. Distance Metric */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between sm:justify-start gap-3">
         <div>
           <div className="text-[10px] tracking-widest text-zinc-500 uppercase flex items-center gap-1.5 font-semibold">
             <span>TOTAL_DISTANCE</span>
@@ -44,30 +44,34 @@ export default function MinimalStatsHUD({
         )}
       </div>
 
-      {/* 2. Status & Iterations */}
-      <div className="flex items-center gap-3 sm:gap-4 text-[11px]">
+      {/* 2. Status & Iterations (Grid on mobile, flex on desktop) */}
+      <div className="grid grid-cols-3 sm:flex items-center gap-2 sm:gap-4 text-[11px] pt-2 sm:pt-0 border-t border-white/[0.06] sm:border-t-0">
         {/* Status */}
-        <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">
+        <div className="flex items-center justify-center sm:justify-start gap-1.5 px-2 py-1 sm:py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">
           <span
             className={`w-1.5 h-1.5 rounded-full ${
               isRunning ? 'bg-emerald-400 animate-ping' : 'bg-zinc-600'
             }`}
           />
           <span className={isRunning ? 'text-emerald-400 font-semibold' : 'text-zinc-400'}>
-            {isRunning ? 'OPTIMIZING' : 'STANDBY'}
+            {isRunning ? 'RUN' : 'READY'}
           </span>
         </div>
 
-        <div className="h-3 w-px bg-white/10" />
+        <div className="hidden sm:block h-3 w-px bg-white/10" />
 
-        <div className="text-zinc-500">
-          STEP: <span className="text-zinc-200 font-bold">{String(iteration).padStart(3, '0')}</span>
+        {/* Step */}
+        <div className="flex items-center justify-center sm:justify-start px-2 py-1 sm:py-0 rounded bg-white/[0.02] sm:bg-transparent border border-white/[0.04] sm:border-none text-zinc-500">
+          <span className="sm:inline hidden mr-1">STEP:</span>
+          <span className="text-zinc-200 font-bold">#{String(iteration).padStart(3, '0')}</span>
         </div>
 
-        <div className="h-3 w-px bg-white/10" />
+        <div className="hidden sm:block h-3 w-px bg-white/10" />
 
-        <div className="text-zinc-500">
-          NODES: <span className="text-zinc-200 font-bold">{citiesCount}</span>
+        {/* Nodes */}
+        <div className="flex items-center justify-center sm:justify-start px-2 py-1 sm:py-0 rounded bg-white/[0.02] sm:bg-transparent border border-white/[0.04] sm:border-none text-zinc-500">
+          <span className="mr-1">NODES:</span>
+          <span className="text-zinc-200 font-bold">{citiesCount}</span>
         </div>
       </div>
     </div>

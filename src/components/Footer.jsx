@@ -15,9 +15,9 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/[0.08] bg-[#06080e] mt-auto font-mono text-zinc-400">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         {/* Main 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-white/[0.06]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pb-6 sm:pb-8 border-b border-white/[0.06]">
           {/* Column 1: Brand & Identity */}
           <div className="space-y-3">
             <div className="flex items-center gap-2.5">
@@ -92,11 +92,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500">
-          <div>
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500 text-center sm:text-left">
+          <div className="leading-relaxed">
             © 2026 <strong className="text-zinc-400 font-medium">OptiTour</strong> • Developed by{' '}
-            <span className="text-zinc-300 font-semibold">Nisarg Jayesh Delvadiya</span> &{' '}
-            <span className="text-zinc-300 font-semibold">Rishan Mazumdar</span>
+            <span className="text-zinc-300 font-semibold whitespace-nowrap">Nisarg Jayesh Delvadiya</span> &{' '}
+            <span className="text-zinc-300 font-semibold whitespace-nowrap">Rishan Mazumdar</span>
           </div>
 
           {/* Scroll to Top Action */}
@@ -104,7 +104,7 @@ export default function Footer() {
             onClick={scrollToTop}
             title="Scroll back to the top of the page"
             aria-label="Scroll to top"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] transition-colors cursor-pointer"
+            className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-zinc-400 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] transition-colors cursor-pointer"
           >
             <ArrowUp className="w-3.5 h-3.5 text-emerald-400" />
             <span>[ ↑ BACK_TO_TOP ]</span>
