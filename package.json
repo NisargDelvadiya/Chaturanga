@@ -1,7 +1,21 @@
 {
-  "name": "tsp-route-visualizer",
-  "version": "0.1.0",
+  "name": "optitour-tsp-visualizer",
+  "version": "1.0.0",
   "private": true,
+  "description": "Interactive Travelling Salesperson Route Visualizer powered by Hill Climbing and 2-Opt local search heuristics.",
+  "author": "Nisarg Jayesh Delvadiya",
+  "contributors": [
+    "Nisarg Jayesh Delvadiya",
+    "Rishan Mazumdar"
+  ],
+  "keywords": [
+    "tsp",
+    "travelling-salesperson-problem",
+    "hill-climbing",
+    "2-opt",
+    "artificial-intelligence",
+    "route-optimization"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +23,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "lucide-react": "^1.58.0",
     "next": "16.4.2",
     "react": "19.3.0",
     "react-dom": "19.3.0"
